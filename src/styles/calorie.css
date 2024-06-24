@@ -1,0 +1,62 @@
+/* .form-control,
+    .form-select {
+        border-radius: 12px;
+        background: none;
+        color: white;
+    }
+    .form-select option{
+        background-color: black;
+    }
+     */
+
+     .form-control,
+     .form-select {
+       border-radius: 12px;
+       background: none;
+       color: white;
+     }
+     
+     .form-select option {
+       background-color: black;
+       color: white;
+     }
+     
+     .calo .container {
+       padding: 10px;
+     }
+     
+     .calo .card-header,
+     .calo .card-footer {
+       border-radius: 15px 15px 0 0;
+     }
+     
+     .calo .card-footer {
+       border-radius: 0 0 15px 15px;
+     }
+     
+     .calo .form-control,
+     .calo .form-select {
+       background-color: rgba(255, 255, 255, 0.1);
+       color: white;
+     }
+     
+     .calo .btn-success {
+       border-radius: 15px;
+     }
+     
+     .ans_calculate {
+       margin-top: 10px; /* Adjusted margin to reduce the distance */
+     }
+     
+     .ans_calculate h4 {
+       background-color: rgb(39, 38, 38);
+       border-radius: 15px;
+       color: white;
+       padding: 15px;
+       margin: 0; /* Ensure no extra margin */
+     }
+     
+     .calo .card-footer {
+       padding-bottom: 12px; /* Ensure no excessive padding */
+     }
+     

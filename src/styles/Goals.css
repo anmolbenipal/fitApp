@@ -1,0 +1,30 @@
+.end {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.5;
+    color: #fff;
+}
+.of{
+    padding-bottom: 5%;
+}
+.goals{
+    background: url(../images/04.png);
+    background-size: cover;
+    text-align: center;
+}
+#goals{
+    padding:100px;
+    margin-top: 30px;
+}
+.goals .btn{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.goals .btn:hover{
+    background-color: #ccc;
+}
+.goals_nav_link{
+    text-decoration: none;
+    color: black;
+}

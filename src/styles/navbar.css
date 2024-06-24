@@ -1,0 +1,11 @@
+.navbar-brand img{
+    height:40px;
+    width:250px;
+    padding-left: 50px;
+}
+.main{
+    padding-right: 50px;
+}
+.nav-item{
+    padding-left: 30px;
+}

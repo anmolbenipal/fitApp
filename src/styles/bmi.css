@@ -1,0 +1,161 @@
+/* .bmi{
+    background: black;
+    color: white;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+.bmi .calculation{
+    padding-bottom: 0;
+    padding-top: 5px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.bmi .calculation_container{
+    row-gap: 4rem;
+}
+.bmi .calculation_content .section_title{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.bmi .section_titles h1{
+    font-size: 40px;
+}
+.bmi .calculation_description{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 20px;
+}
+.bmi .calculation_form{
+    display: grid;
+    row-gap: 1rem;
+}
+.calculation_box{
+    position: relative;
+    border:1px solid darkgray;
+    width: 400px;
+}
+.calculation_input{
+    width: 100%;
+    background: transparent;
+    padding: 20px 56px 20px 24px;
+    outline:none;
+    border: none;
+    color: green;
+}
+.bmi .calculation_label{
+    position: absolute;
+    right:1.5rem;
+    top:1.25 rem;
+    color: lavenderblush;
+}
+.bmi .calculation_form.button{
+    margin-top: 1.5 rem;
+}
+ .calculation_message{
+    transform:translateY(1 rem);
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    
+}
+ .color-green{
+    color:green;
+}
+ .color-red{
+    color:red;
+}
+ input{
+    font-size: 20px;
+    font-weight: 500;
+} */
+
+.bmi {
+    background: black;
+    color: white;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+.bmi .calculation {
+    padding-bottom: 0;
+    padding-top: 5px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.bmi .calculation_container {
+    row-gap: 4rem;
+}
+
+.bmi .calculation_content .section_title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.bmi .section_titles h1 {
+    font-size: 40px;
+}
+
+.bmi .calculation_description {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 20px;
+}
+
+.bmi .calculation_form {
+    display: grid;
+    row-gap: 1rem;
+}
+
+.calculation_box {
+    position: relative;
+    border: 1px solid darkgray;
+    width: 400px;
+}
+
+.calculation_input {
+    width: 100%;
+    background: transparent;
+    padding: 20px 56px 20px 24px;
+    outline: none;
+    border: none;
+    color: green;
+}
+
+.bmi .calculation_label {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.25rem;
+    color: lavenderblush;
+}
+
+.bmi .calculation_form.button {
+    margin-top: 1.5rem;
+}
+
+.calculation_message {
+    transform: translateY(1rem);
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-green {
+    color: green;
+}
+
+.color-red {
+    color: red;
+}
+
+input {
+    font-size: 20px;
+    font-weight: 500;
+}

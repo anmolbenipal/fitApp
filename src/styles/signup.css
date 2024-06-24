@@ -1,0 +1,102 @@
+.con .container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.con .container:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: #ccc;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.con .contact-box{
+	max-width: 1000px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+    margin-top: 100px;
+}
+   
+.con .left{
+	background: url(../images/signup.png) no-repeat center;
+	background-size: cover;
+	height: 200px;
+    width: 200px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+.nav__link{
+    color: black;
+    text-decoration: none;
+   
+}
+
+.con .right{
+	padding: 25px 40px;
+}
+.con .input_container{
+    width:420px;
+    background-color: #fff;
+    padding:30px ;
+    box-shadow: 0 0 25px black;
+    border: 2px solid grey;
+}
+.con .input_container .input-row{
+    margin-bottom: 12px;
+}
+.con .input_container input:not([type="submit"]),
+.con .input_container textarea{
+    width: 100%;
+    margin: 0 0 3px;
+    background-color: #f3f0f0;
+    color: #000;
+    padding: 10px 15px;
+    height:50px ;
+    line-height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    outline: 0;
+    transform: all 0.5s ease-out;
+}
+.con .input_container textarea{
+    height: 100px;
+    resize:none;
+}
+.con .input_container input:not([type="submit"]),
+.con .input_container textarea:focus{
+    border-color: rgb(95, 95, 89);
+}
+.con .input_container input[type="submit"]{
+    padding:10px 30px ;
+    font-size: 18px;
+    line-height: 30px;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: goldenrod;
+    color: #fff;
+    border: 0;
+    transition: all 0.5s ease-out;
+    border-radius: 5px;
+
+}
+.con .input_container input[type="submit"]:hover{
+    background-color: black;
+}
