@@ -1,232 +1,87 @@
-// import React , {useState} from 'react';
-// import '../styles/signup.css';
-// import { NavLink , useNavigate} from 'react-router-dom';
-
-
-// const Signup = () => {
-//   const navigate = useNavigate();
-//   const[user , setUser]=useState({
-//     name:"" , email:"" , phone:"" , work:"",password:"",cpassword:""
-//   });
-//   let name , value;
-//   const handleInputs = (e) => {
-//        console.log(e);
-//        name = e.target.name;
-//        value=e.target.value;
-//        setUser({...user,[name]:value});
-//   }
-// const PostData = async (e) =>{
-//       e.preventDefault();
-//       const {name,email,phone,work,password,cpassword}=user;
-
-//       const res = await fetch("/register" , {
-//         method:"POST",
-//         headers:{
-//           "Content-Type":"application/json"
-//         },
-//         body:JSON.stringify({
-//           name,email,phone,work,password,cpassword
-//         })
-//       } );
-//       const data = await res.json();
-//       if(res.status=== 422 || !data){
-//         window.alert("Invalid Registration");
-//         console.log("Invalid Registration");
-//       } else{
-//         window.alert("Registration Successful");
-//         console.log("Registration Successful");
-
-//         navigate("/login");
-//       }
-// }
-
-//   return <section className='con'>
-//   <div className="container">
-//      <div className="contact-box">
-//       <div className="main">
-//         <div className="left"></div>
-//         <div>
-//        <NavLink to= '/login' className='nav__link'>Already Registered</NavLink>
-//         </div>
-//       </div>
-       
-//        <div className="right input_container">
-//          <form method='POST' className="validation" id="validation">
-//            <div className="input-row">
-//              <input type="text" name="name" placeholder="Your Name" required value={user.name} onChange={handleInputs}/>
-//            </div>
-//            <div className="input-row">
-//              <input type="email" name="email" placeholder="Your Email" required value={user.email} onChange={handleInputs}/>
-//            </div>
-//            <div className="input-row">
-//              <input type="text" name="phone" placeholder="Your Phone" required value={user.phone} onChange={handleInputs}/>
-//            </div>
-//            <div className="input-row">
-//              <input type="text" name="work" placeholder="Your Profession" required value={user.work} onChange={handleInputs}/>
-//            </div>
-//            <div className="input-row">
-//              <input type="password" name="password" placeholder="Your Password" required value={user.password} onChange={handleInputs} />
-//            </div>
-//            <div className="input-row">
-//              <input type="password" name="cpassword" placeholder="Confirm Your Password" required value={user.cpassword} onChange={handleInputs} />
-//            </div>
-//            </form>
-           
-//            <div className="text-center">
-//              <input type="submit" name="signup" id="signup" className="form-submit" value="Register" onClick={PostData} />
-//            </div>
-//        </div>
-//      </div>
-//    </div>
-
-// </section>
-  
-// }
-
-// export default Signup
-
-
-import React, { useState } from 'react';
+import React , {useState} from 'react';
 import '../styles/signup.css';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink , useNavigate} from 'react-router-dom';
+
 
 const Signup = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState({
-    name: "", email: "", phone: "", work: "", password: "", cpassword: ""
+  const[user , setUser]=useState({
+    name:"" , email:"" , phone:"" , work:"",password:"",cpassword:""
   });
-
+  let name , value;
   const handleInputs = (e) => {
-    const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
+       console.log(e);
+       name = e.target.name;
+       value=e.target.value;
+       setUser({...user,[name]:value});
   }
+const PostData = async (e) =>{
+      e.preventDefault();
+      const {name,email,phone,work,password,cpassword}=user;
 
-  const PostData = async (e) => {
-    e.preventDefault();
-    const { name, email, phone, work, password, cpassword } = user;
-
-    try {
-      const res = await fetch("https://fit-5h42rzx25-anmolbenipals-projects.vercel.app/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
+      const res = await fetch("/register" , {
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
         },
-        body: JSON.stringify({
-          name, email, phone, work, password, cpassword
+        body:JSON.stringify({
+          name,email,phone,work,password,cpassword
         })
-      });
-
-      // Check if the response status is not OK
-      if (!res.ok) {
-        const errorText = await res.text();
-        throw new Error(`HTTP error! status: ${res.status}, message: ${errorText}`);
-      }
-
+      } );
       const data = await res.json();
-      if (res.status === 422 || !data) {
+      if(res.status=== 422 || !data){
         window.alert("Invalid Registration");
         console.log("Invalid Registration");
-      } else {
+      } else{
         window.alert("Registration Successful");
         console.log("Registration Successful");
+
         navigate("/login");
       }
-    } catch (error) {
-      console.error("Error during registration:", error.message);
-    }
-  }
-
-  return (
-    <section className='con'>
-      <div className="container">
-        <div className="contact-box">
-          <div className="main">
-            <div className="left"></div>
-            <div>
-              <NavLink to='/login' className='nav__link'>Already Registered</NavLink>
-            </div>
-          </div>
-
-          <div className="right input_container">
-            <form method='POST' className="validation" id="validation">
-              <div className="input-row">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  value={user.name}
-                  onChange={handleInputs}
-                />
-              </div>
-              <div className="input-row">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                  value={user.email}
-                  onChange={handleInputs}
-                />
-              </div>
-              <div className="input-row">
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="Your Phone"
-                  required
-                  value={user.phone}
-                  onChange={handleInputs}
-                />
-              </div>
-              <div className="input-row">
-                <input
-                  type="text"
-                  name="work"
-                  placeholder="Your Profession"
-                  required
-                  value={user.work}
-                  onChange={handleInputs}
-                />
-              </div>
-              <div className="input-row">
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Your Password"
-                  required
-                  value={user.password}
-                  onChange={handleInputs}
-                />
-              </div>
-              <div className="input-row">
-                <input
-                  type="password"
-                  name="cpassword"
-                  placeholder="Confirm Your Password"
-                  required
-                  value={user.cpassword}
-                  onChange={handleInputs}
-                />
-              </div>
-              <div className="text-center">
-                <input
-                  type="submit"
-                  name="signup"
-                  id="signup"
-                  className="form-submit"
-                  value="Register"
-                  onClick={PostData}
-                />
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
 }
 
-export default Signup;
+  return <section className='con'>
+  <div className="container">
+     <div className="contact-box">
+      <div className="main">
+        <div className="left"></div>
+        <div>
+       <NavLink to= '/login' className='nav__link'>Already Registered</NavLink>
+        </div>
+      </div>
+       
+       <div className="right input_container">
+         <form method='POST' className="validation" id="validation">
+           <div className="input-row">
+             <input type="text" name="name" placeholder="Your Name" required value={user.name} onChange={handleInputs}/>
+           </div>
+           <div className="input-row">
+             <input type="email" name="email" placeholder="Your Email" required value={user.email} onChange={handleInputs}/>
+           </div>
+           <div className="input-row">
+             <input type="text" name="phone" placeholder="Your Phone" required value={user.phone} onChange={handleInputs}/>
+           </div>
+           <div className="input-row">
+             <input type="text" name="work" placeholder="Your Profession" required value={user.work} onChange={handleInputs}/>
+           </div>
+           <div className="input-row">
+             <input type="password" name="password" placeholder="Your Password" required value={user.password} onChange={handleInputs} />
+           </div>
+           <div className="input-row">
+             <input type="password" name="cpassword" placeholder="Confirm Your Password" required value={user.cpassword} onChange={handleInputs} />
+           </div>
+           </form>
+           
+           <div className="text-center">
+             <input type="submit" name="signup" id="signup" className="form-submit" value="Register" onClick={PostData} />
+           </div>
+       </div>
+     </div>
+   </div>
 
+</section>
+  
+}
+
+export default Signup
 
