@@ -85,6 +85,7 @@
 
 // export default Signup
 
+
 import React, { useState } from 'react';
 import '../styles/signup.css';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -227,4 +228,5 @@ const Signup = () => {
 }
 
 export default Signup;
+
 
