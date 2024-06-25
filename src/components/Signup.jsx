@@ -104,23 +104,34 @@ const Signup = () => {
     e.preventDefault();
     const { name, email, phone, work, password, cpassword } = user;
 
-    const res = await fetch("/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name, email, phone, work, password, cpassword
-      })
-    });
-    const data = await res.json();
-    if (res.status === 422 || !data) {
-      window.alert("Invalid Registration");
-      console.log("Invalid Registration");
-    } else {
-      window.alert("Registration Successful");
-      console.log("Registration Successful");
-      navigate("/login");
+    try {
+      const res = await fetch("https://fit-5h42rzx25-anmolbenipals-projects.vercel.app/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name, email, phone, work, password, cpassword
+        })
+      });
+
+      // Check if the response status is not OK
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(`HTTP error! status: ${res.status}, message: ${errorText}`);
+      }
+
+      const data = await res.json();
+      if (res.status === 422 || !data) {
+        window.alert("Invalid Registration");
+        console.log("Invalid Registration");
+      } else {
+        window.alert("Registration Successful");
+        console.log("Registration Successful");
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error("Error during registration:", error.message);
     }
   }
 
@@ -216,3 +227,4 @@ const Signup = () => {
 }
 
 export default Signup;
+
